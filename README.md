@@ -1,1 +1,0 @@
-# vin-co-admin
