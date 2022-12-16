@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { instance } from "../api/api";
+import Card from "../components/Card";
 import PageTitle from "../components/PageTitle";
 import Pagination from "../components/Pagination";
 
@@ -44,17 +45,7 @@ const ProductList = () => {
         <>
           <div className="grid grid-cols-5 gap-1">
             {currentList.map((productList) => (
-              <div
-                key={productList.id}
-                data-id={productList.id}
-                className="border"
-              >
-                <Link to={`/product/${productList.id}`}>
-                  <div>{productList.title}</div>
-                  <img width={250} src={productList.thumbnail} alt="" />
-                  <div>{productList.price.toLocaleString()}</div>
-                </Link>
-              </div>
+              <Card productList={productList} key={productList.id} />
             ))}
           </div>
           <Pagination

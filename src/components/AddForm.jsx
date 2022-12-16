@@ -46,8 +46,6 @@ const AddForm = ({ children, ...props }) => {
   // const base64ToImg = async () => {};
 
   const onSubmit = async (data) => {
-    console.log(data);
-
     try {
       const res = await instance.request("/products", {
         method: "post",
@@ -90,7 +88,7 @@ const AddForm = ({ children, ...props }) => {
   return (
     <form
       className="flex flex-col gap-2 max-w-4xl mx-auto"
-      onSubmit={handleSubmit(editSubmit)}
+      onSubmit={props.data ? handleSubmit(editSubmit) : handleSubmit(onSubmit)}
     >
       <label htmlFor="title" className="flex gap-2">
         제품 이름

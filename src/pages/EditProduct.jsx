@@ -6,6 +6,8 @@ import PageTitle from "../components/PageTitle";
 
 const EditProduct = () => {
   const { id } = useParams();
+  console.log(id);
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const navigate = useNavigate();
